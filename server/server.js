@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({ origin: "http://16.16.187.156:3000", credentials:true, methods: ["GET,POST,PUT,DELETE"], allowedHeaders:["Content-Type", "Authorization"],}));
+app.use(cors({ origin: "http://51.20.250.14:3000", credentials:true, methods: ["GET,POST,PUT,DELETE"], allowedHeaders:["Content-Type", "Authorization"],}));
 
 app.use("/owner", ownerRouter);   
 app.use("/apartments", apartmentRouter);       
