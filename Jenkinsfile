@@ -2,16 +2,9 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_PROJECT_NAME = "part2project"  // Different project name for Part 2
+        COMPOSE_PROJECT_NAME = "devopsapp"
         IMAGE_TAG = "latest"
     }
-
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/duaehtisham/devops-assignment-2.git' // Your GitHub repo
-            }
-        }
 
         stage('Build and Deploy') {
             steps {
