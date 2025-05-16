@@ -68,7 +68,7 @@ const filteredApartments = (apartments || []).filter((apartment) =>
             </svg>
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Searchhh..."
               className="bg-slate-300 w-full ml-2 outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
