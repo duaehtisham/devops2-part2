@@ -6,8 +6,6 @@ services:
     container_name: frontend_jenkins
     ports:
       - '3100:3000' # mapped to a different host port (to avoid conflict)
-    env_file:
-      - ./my-app/.env
     depends_on:
       - backend-jenkins
 
@@ -16,7 +14,5 @@ services:
     container_name: backend_jenkins
     ports:
       - '5100:5000' # different host port
-    env_file:
-      - ./server/.env
     volumes:
       - ./server:/app
