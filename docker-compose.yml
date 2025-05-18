@@ -15,5 +15,3 @@ services:
     environment:
       - CONNECTION_URL=mongodb+srv://maryamtahir061:meenuu123@clusterweb.l6zg4.mongodb.net/
       - PORT=5000
-    volumes:
-      - ./server:/app
