@@ -14,5 +14,3 @@ services:
     container_name: backend_jenkins
     ports:
       - '5100:5000' # different host port
-    volumes:
-      - ./server:/app
