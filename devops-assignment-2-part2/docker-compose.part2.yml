@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./my-app
+    container_name: my-frontend-p2
+    ports:
+      - '3001:3001'  # Changed port to avoid conflict with Part 1
+    volumes:
+      - ./my-app:/app  # Code volume
+    depends_on:
+      - backend
+
+  backend:
+    build: ./server
+    container_name: my-backend-p2
+    ports:
+      - '5001:5001'  # Changed port to avoid conflict
+    environment:
+      - CONNECTION_URL=mongodb+srv://maryamtahir061:meenuu123@clusterweb.l6zg4.mongodb.net/
+      - PORT=5001
+    volumes:
+      - ./server:/app  # Code volume
