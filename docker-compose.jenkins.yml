@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend-jenkins:
+    build: ./my-app
+    container_name: frontend_jenkins
+    ports:
+      - '3001:3000' # mapped to a different host port (to avoid conflict)
+    env_file:
+      - ./my-app/.env
+    depends_on:
+      - backend-jenkins
+
+  backend-jenkins:
+    build: ./server
+    container_name: backend_jenkins
+    ports:
+      - '5001:5000' # different host port
+    env_file:
+      - ./server/.env
+    volumes:
+      - ./server:/app
