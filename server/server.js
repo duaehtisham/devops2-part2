@@ -13,9 +13,10 @@ const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
+
 app.use(
   cors({
-    origin: "http://13.49.67.8:3000",
+    origin: ["http://13.60.195.72:3000", "http://13.60.195.72:3001"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
