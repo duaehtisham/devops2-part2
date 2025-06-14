@@ -13,11 +13,24 @@ pipeline {
       }
     }
 
+    stage('Cleanup') {
+      steps {
+        sh 'docker-compose -p $PROJECT_NAME -f $COMPOSE_FILE down || true'
+      }
+    }
+
     stage('Build and Deploy') {
       steps {
         sh 'docker-compose -p $PROJECT_NAME -f $COMPOSE_FILE build'
         sh 'docker-compose -p $PROJECT_NAME -f $COMPOSE_FILE up -d'
       }
     }
+
+    stage('Status') {
+      steps {
+        sh 'docker ps'
+      }
+    }
   }
-}   // End
+}
+
