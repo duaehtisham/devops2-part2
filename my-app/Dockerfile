@@ -10,6 +10,8 @@ RUN npm run build
 
 RUN npm install -g serve
 
+ENV HOST 0.0.0.0
+
 EXPOSE 3000
 
-CMD ["serve", "-s", "build", "-l", "tcp://0.0.0.0:3000"]
+CMD ["serve", "-s", "build", "-l", "3000"]
