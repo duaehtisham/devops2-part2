@@ -5,7 +5,7 @@ services:
     build: ./my-app
     container_name: frontend_jenkins
     ports:
-      - '3100:3000' # mapped to a different host port (to avoid conflict)
+      - '3001:3000' # mapped to a different host port (to avoid conflict)
     depends_on:
       - backend-jenkins
 
@@ -13,4 +13,4 @@ services:
     build: ./server
     container_name: backend_jenkins
     ports:
-      - '5100:5000' # different host port
+      - '5001:5000' # different host port
